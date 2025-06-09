@@ -1,0 +1,46 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "Node.js & TypeScript",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"features": {
+		"ghcr.io/nikobockerman/devcontainer-features/yarn-persistent-cache:1": {},
+		"ghcr.io/devcontainers-extra/features/ts-node:1": {}
+	},
+	"updateContentCommand": "yarn",
+	"postAttachCommand": "yarn dev",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"editor.formatOnSave": true,
+				"editor.rulers": [80, 120, 160],
+				"editor.tabSize": 2,
+				"editor.wordWrap": "wordWrapColumn",
+				"prettier.printWidth": 160,
+				"prettier.proseWrap": "always",
+				"prettier.max_line_length": 160,
+				"prettier.semi": false,
+				"prettier.singleQuote": true,
+				"prettier.tabWidth": 2,
+				"prettier.trailingComma": "all",
+				"prettier.useTabs": false
+			},
+			"extensions": [
+				"esbenp.prettier-vscode",
+				"tal7aouy.indent-colorizer"
+			]
+		}
+	}
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
