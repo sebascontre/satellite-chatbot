@@ -86,7 +86,7 @@ client.on('raided', (channel, username, viewers) => {
 
 client.on('pong', (latency) => {
   console.log('PONG enviado! Latencia: ' + latency)
-  axios.get('https://satellite-chatbot.glitch.me/ping')
+  axios.get(`${CHATBOT_URL}/ping`)
 })
 
 // Configurar una ruta en Fastify
@@ -143,11 +143,6 @@ fastify.get('/shout', async (request, reply) => {
 })
 
 fastify.get('/ping', async (req, res) => {
-  axios.get('https://decapi.me/twitch/uptime/satellitemoe').then(function (response) {
-    if (response.data == 'satellitemoe is offline') {
-      axios.post('https://ntfy.sh/satellite_247_alerts', 'Satellite 24/7 OFFLINE', {})
-    }
-  })
   return { ping: 'pong' }
 })
 
