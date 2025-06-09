@@ -86,7 +86,7 @@ client.on('raided', (channel, username, viewers) => {
 
 client.on('pong', (latency) => {
   console.log('PONG enviado! Latencia: ' + latency)
-  axios.get(`${CHATBOT_URL}/ping`)
+  axios.get(`${process.env.CHATBOT_URL}/ping`)
 })
 
 // Configurar una ruta en Fastify
