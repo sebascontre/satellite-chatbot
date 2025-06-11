@@ -1,0 +1,30 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/marcosgomesneto/bun-devcontainers/tree/main/src/basic-bun
+{
+  "name": "Bun",
+  "dockerFile": "Dockerfile",
+  // Configure tool-specific properties.
+  "updateContentCommand": "bun install",
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.rulers": [80, 120, 160],
+        "editor.tabSize": 2,
+        "editor.wordWrap": "wordWrapColumn",
+        "prettier.printWidth": 160,
+        "prettier.proseWrap": "always",
+        "prettier.max_line_length": 160,
+        "prettier.semi": false,
+        "prettier.singleQuote": true,
+        "prettier.tabWidth": 2,
+        "prettier.trailingComma": "all",
+        "prettier.useTabs": false
+      },
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": ["esbenp.prettier-vscode", "oven.bun-vscode", "tal7aouy.indent-colorizer"]
+    }
+  }
+}
