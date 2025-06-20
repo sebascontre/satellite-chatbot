@@ -96,7 +96,7 @@ fastify.get('/', async (request, reply) => {
 
 fastify.get('/shout', async (request, reply) => {
   axios
-    .get('https://runnel.live/api/streams/KFqBvBV33iFO0YGLZiqu', {
+    .get(process.env.RUNNEL_STREAM, {
       headers: {
         Cookie: `API_KEY=${process.env.RUNNEL_COOKIE};`,
       },
